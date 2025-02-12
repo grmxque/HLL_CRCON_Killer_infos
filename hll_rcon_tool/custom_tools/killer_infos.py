@@ -19,9 +19,9 @@ from rcon.rcon import Rcon, StructuredLogLineWithMetaData
 ENABLED = True
 # (End of configuration)
 # -----------------------------------------------------------------------------
-def send_kill_message(rcon, struct_log)
-    try
-        killer_name = struct_log(log["player_name_1"])
+def send_kill_message(rcon, struct_log):
+    try:
+        killer_name = struct_log["player_name_1"]
         killed_id = struct_log["player_id_2"]
         weapon_name = struct_log["weapon"]
 
@@ -39,7 +39,7 @@ def killer_infos_on_kill(rcon: Rcon, struct_log: StructuredLogLineWithMetaData):
     """
     Call the message on kill
     """
-    if ENABLED
+    if ENABLED:
         send_kill_message(rcon, struct_log)
 
 logger = logging.getLogger('rcon')
