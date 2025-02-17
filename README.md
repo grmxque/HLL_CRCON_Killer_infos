@@ -28,8 +28,7 @@ that displays killer informations on death
 
   Second part
   ```shell
-  cd /root/hll_rcon_tool/custom_tools
-  wget https://raw.githubusercontent.com/grmxque/HLL_CRCON_Killer_infos/refs/heads/main/hll_rcon_tool/custom_tools/killer_infos.py
+  wget https://raw.githubusercontent.com/grmxque/HLL_CRCON_Killer_infos/refs/heads/main/hll_rcon_tool/custom_tools/killer_infos.py -O /root/hll_rcon_tool/custom_tools/killer_infos.py
   ```
 
 - Edit `/root/hll_rcon_tool/rcon/hooks.py`
