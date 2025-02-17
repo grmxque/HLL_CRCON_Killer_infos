@@ -17,6 +17,19 @@ from rcon.rcon import Rcon, StructuredLogLineWithMetaData
 # Should we display the killer informations  ?
 # True or False
 ENABLED = True
+
+# Strings translations
+# Available : 0 for english, 1 for french
+LANG = 1
+
+# Translations
+# format is : "key": ["english", "french"]
+# ----------------------------------------------
+TRANSL = {
+    "killedby": ["KILLED BY", "TUÉ PAR"],
+    "with": ["WITH", "AVEC"],
+}
+
 # (End of configuration)
 # -----------------------------------------------------------------------------
 def send_kill_message(rcon, struct_log):
@@ -27,7 +40,7 @@ def send_kill_message(rcon, struct_log):
 
         rcon.message_player(
             player_id=killed_id,
-            message=f"KILLED BY {killer_name} WITH {weapon_name}",
+            message=f"{TRANSL['killedby'][LANG]} {killer_name} {TRANSL['with'][LANG]} {weapon_name}",
             by="killer_infos",
             save_message=False
         )
